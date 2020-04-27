@@ -62,3 +62,5 @@ VALUES (2, 'Bugs', 'Bunny', '+36 (46) 518718', 'bugs.bunny@codecool.com', 'Misko
        (1, 'Eric', 'Cartman', '+48 (78) 3305247', 'eri.cartman@codecool.com', 'Kraków', 23);
 
 SELECT pg_catalog.setval('mentor_id_seq', 23, TRUE);
+
+ALTER TABLE applicant ALTER COLUMN application_code ADD GENERATED ALWAYS AS IDENTITY;
