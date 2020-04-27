@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+    Applicants list
+{% endblock %}
+
+{% block content %}
+
+    <div id="all-applicants">
+        <table>
+            <thead>
+                <tr>
+                    <td><h3>Full Name</h3></td>
+                    <td><h3>Phone Number</h3></td>
+                    <td><h3>Email</h3></td>
+                    <td><h3>Application Code</h3></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for applicant in applicants %}
+                    <tr>
+                        <td><a href="/applicants/{{ applicant.application_code }}">{{ applicant.first_name + ' ' + applicant.last_name }}</td>
+                        <td>{{ applicant.phone_number }}</td>
+                        <td>{{ applicant.email }}</td>
+                        <td>{{ applicant.application_code }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div><br><br>
+
+    <div>
+        <button id='submit' type="submit"><a href="/add-applicant">Add New Applicant</a></button>
+    </div><br>
+    <div>
+        <form action="/applicants/delete-by-email" method="POST">
+            <label for="email-ending"></label>
+            <input type="text" id="email-ending" name="email-ending">
+            <button type="submit">Delete by email domain</button>
+        </form>
+    </div>
+
+
+{% include 'footer.html' %}
+{% endblock %}
+
+

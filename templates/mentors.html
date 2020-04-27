@@ -10,14 +10,35 @@
             <label for="name-input">Filter by mentor last name:</label>
             <input id="name-input" type="text" name="mentor-last-name">
             <button type="submit">Search</button>
+        </form><br>
+    </div><br>
+    <div>
+        <form action="/mentors">
+            <label for="city-name">Select City</label>
+            <select id="city-name" name="city-name">
+                <option selected="selected"> {{city_name}} </option>
+                <option>Bucharest</option>
+                <option>Budapest</option>
+                <option>Krakow</option>
+                <option>Miskolc</option>
+                <option>Warsaw</option>
+            </select>
+            <button type="submit" >Submit</button>
+
         </form>
-    </div>
+    </div><br><br>
+
 
     <div id="mentors">
         {% for mentor in mentors %}
             {{ mentor.first_name + " " + mentor.last_name }} - {{ mentor.city }}<br>
         {% endfor %}
     </div>
+    <div id="cities">
+        {% for city in cities %}
+            {{ city.first_name + " " + city.last_name }} - {{ city.city }}<br>
+        {% endfor %}
+    </div>
 
-    {% include 'footer.html' %}
+{% include 'footer.html' %}
 {% endblock %}
