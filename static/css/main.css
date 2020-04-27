@@ -1,8 +1,41 @@
 body {
-    background-color: #008e9d;
-    color: white;
+    background-color: silver   ;
+    color: midnightblue;
+}
+h1 {
+    color: midnightblue;
 }
 
 .content-wrapper {
     padding: 10%;
+}
+
+footer {
+    color: silver;
+}
+
+table {
+    padding: 10px;
+    background-color: silver;
+    border-radius: 10px;
+    border-bottom:10px solid darkblue;
+    border: 1px solid #9a9b89;
+}
+
+table h3 {
+    color: darkblue;
+}
+
+#submit {
+
+    border-radius: 7px;
+    background-color: darkblue;
+}
+
+#submit a:visited {
+  color: silver;
+    }
+
+#submit a:hover { color: white;
+        text-decoration: none;
 }
